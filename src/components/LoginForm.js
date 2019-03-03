@@ -12,7 +12,8 @@ class LoginForm extends Component {
                     <TextInput 
                         value={this.state.text}
                         onChangeText={text => this.setState({ text: text})}
-                        style={{ height: 20, width: 100 }} 
+                        style={{ height: 25, width: 250 }}
+                        placeholder='Enter your email here' 
                     />
                 </CardSection>
                 
