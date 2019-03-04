@@ -28,19 +28,18 @@ class App extends Component {
     }
 
     renderContent() {
-        if (this.state.loggedIn) {
+        switch (this.state.loggedIn) {
+            case true:
+                return <Button>Log Out</Button>
+            case false:
+                return <LoginForm />
+            default:
             return (
-                <Button>
-                    Log Out
-                </Button>
+                <View>
+                    <Spinner/>
+                </View>
             );
-        } else {
-            return (
-                <Spinner size='small' />
-            )
         }
-
-        return <LoginForm />
     }
     
     render() {
