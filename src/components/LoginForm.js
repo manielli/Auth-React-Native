@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { Button, Card, CardSection, Input } from './common';
+import firebase from 'firebase';
 
 class LoginForm extends Component {
     state = { email: '', password: '', error: '' };
@@ -8,6 +9,8 @@ class LoginForm extends Component {
     onButtonPress() {
         const { email, password } = this.state;
 
+        this.setState({ error: '' });
+        
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
@@ -57,7 +60,7 @@ class LoginForm extends Component {
 const styles = {
     errorTextStyle: {
         fontSize: 20,
-        alignSelf: 'centre',
+        alignSelf: 'center',
         color: 'red'
     }
 };
