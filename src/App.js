@@ -38,11 +38,7 @@ class App extends Component {
             case false:
                 return <LoginForm />
             default:
-            return (
-                <View>
-                    <Spinner/>
-                </View>
-            );
+                return <Spinner/>
         }
     }
     
